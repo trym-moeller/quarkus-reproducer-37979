@@ -11,6 +11,7 @@ repositories {
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-scala'
+    implementation 'io.quarkus:quarkus-scala-deployment:3.6.4'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
     implementation 'io.quarkus:quarkus-oidc'
     implementation 'io.quarkus:quarkus-keycloak-authorization'
