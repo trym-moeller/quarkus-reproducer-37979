@@ -8,14 +8,12 @@ import org.jboss.resteasy.reactive.NoCache
 @Path("/api/users")
 class UserResource @Inject()(val identity: SecurityIdentity) {
 
-  class User(val identity: SecurityIdentity) {
-    private val userName = identity.getPrincipal.getName
-
+  class User(val userName: String) {
     def getUserName: String = userName
   }
 
   @GET
   @Path("/me")
   @NoCache
-  def me = new User(identity)
+  def me = new User(identity.getPrincipal.getName)
 }
